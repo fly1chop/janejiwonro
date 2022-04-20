@@ -1,0 +1,115 @@
+@import '_reset.scss';
+@import '_common.scss';
+
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m::after {content: '\00a0';}
+
+// body {padding: 50px;}
+#header {position: fixed; left: 50%; top: 50px; transform: translateX(-50%); width: 100%; max-width: 1200px; z-index: 1000; display: flex;justify-content: flex-end;}
+#gnb {
+  .circle {
+    position: fixed; top: 0; right: 0; transform: translate(30%, -30%) scale(0); background: $primary-dark; width: 40vw; aspect-ratio: 1 / 1; border-radius: 50%; transition: transform 0.5s; transform-origin: top right;
+  }
+  a.btn.on + .circle {
+    transform: translate(30%, -30%) scale(1);
+  }
+  a.btn.on ~ .sub {
+    display: block;
+  }
+  .sub {
+    position: absolute; color: $text-light; right: 0; top: 0; transform: translate(-50%, -50%); text-align: right; font-size: 20px; box-sizing: border-box; height: 100%; display: none; animation: menu_opacity 0.5s linear 1;
+
+    a.close {display: inline-block; font-size: 30px; margin-bottom: 40px;}
+
+    ul {
+      li + li {margin-top: 20px;}
+    }
+  }
+}
+
+.ticker .scroll.txt {
+  transform: rotate(-90deg);
+  left: calc(-50% + 50px);
+  top: 50%;
+}
+
+.ticker .scroll.txt1 {
+  transform: rotate(3deg);
+  left: 0; 
+  top: 30%;
+}
+.ticker .scroll.txt2 {
+  transform: rotate(-10deg);
+  left: 0; 
+  top: 65%;
+}
+.ticker .scroll.txt3 {
+  transform: rotate(-80deg);
+  left: -30%; 
+  top: 50%;
+}
+
+
+
+// home
+#home .tit {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+
+  h3 {
+    font-size: 10em;
+  }
+  
+  ul {
+    text-align: right;
+
+    li {
+      font-size: 20px;
+      line-height: 1.3em;
+    }
+  }
+}
+#home a.down {position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font-size: 36px; animation: bounce 0.7s infinite alternate;}
+
+// about me
+$emojis: (
+  brain: (idx: 1, unicode: '\01F9E0'),
+  thinking: (idx: 2, unicode: '\01F914'),
+  developer: (idx: 3, unicode: '👩‍💻'),
+  fire: (idx: 4, unicode: '\01F525'),
+);
+
+#about > .box {
+  padding: 50px 50px 50px 60px; box-sizing: border-box;
+
+  p {
+    font-weight: 700; font-size: 65px; color: $text-light;
+
+    @each $key, $value in $emojis {
+      &.#{$key}{
+        span:nth-child(1)::after {content:'#{map-get($value,unicode)}'; position: absolute; right: 0; top: 0; opacity: 0; transform: scale(0);}
+      }
+    }
+
+    span {position: relative; display: inline-block; transition: all 0.5s;}
+  }
+}
+
+#about.on > .box > p {
+  span:nth-child(1) {transform: translateX(-10px); padding-right: 80px;}
+  span:nth-child(2) {transform: translateX(10px);}
+  @each $key, $value in $emojis {
+    &.#{$key} span:nth-child(1)::after {
+      animation: emoji_scale 0.5s linear forwards;
+      animation-delay: #{map-get($value,idx) / 10}s;
+    }
+  }
+}
+
+
+// module
+a.btn {position: relative; display: inline-block; font-weight: 700; padding-left: 20px;}
+a.btn::after {position: absolute; left: 0; top: 0; content: ''; width: 1em; height: 1em; background-color: $primary-dark; border-radius: 100px;}
+
+
+@import '_mixins.scss';

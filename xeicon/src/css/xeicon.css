@@ -1,0 +1,132 @@
+/* makes the font 33% larger relative to the icon container */
+.xi-x {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+.xi-2x {
+  font-size: 2em;
+}
+
+.xi-3x {
+  font-size: 3em;
+}
+
+.xi-4x {
+  font-size: 4em;
+}
+
+.xi-5x {
+  font-size: 5em;
+}
+
+.xi-spin {
+  -webkit-animation: xi-spin 2s infinite linear;
+          animation: xi-spin 2s infinite linear;
+}
+
+@-webkit-keyframes xi-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes xi-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+.xi-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.xi-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.xi-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.xi-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.xi-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+:root .xi-rotate-90,
+:root .xi-rotate-180,
+:root .xi-rotate-270,
+:root .xi-flip-horizontal,
+:root .xi-flip-vertical {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.xi-fw {
+  width: 1.28571em;
+  text-align: center;
+}
+
+.xi-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none;
+}
+
+.xi-ul > li {
+  position: relative;
+}
+
+.xi-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center;
+}
+
+.xi-li.xi-lg {
+  left: -1.85714em;
+}
+
+.xi-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em;
+}
+
+.pull-right {
+  float: right;
+  margin-right: .3em;
+}
+
+.pull-left {
+  float: left;
+  margin-right: .3em;
+}
+/*# sourceMappingURL=xeicon.css.map */
