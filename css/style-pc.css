@@ -64,10 +64,6 @@ i[class^="xi"] span {
   left: -9999px;
 }
 
-.light {
-  color: #D6D6D6 !important;
-}
-
 body {
   font-family: "Anonymous Pro", "monospace";
   font-size: 14px;
@@ -204,19 +200,30 @@ br.only-m::after {
 
 #header {
   position: fixed;
-  left: 50%;
+  left: 0;
   top: 50px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 100%;
-  max-width: 1200px;
+  height: 55px;
   z-index: 1000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  padding: 0 50px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#header .box {
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#gnb {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #gnb .circle {
@@ -253,6 +260,7 @@ br.only-m::after {
   top: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 100px;
   text-align: right;
   font-size: 20px;
   -webkit-box-sizing: border-box;
@@ -263,6 +271,12 @@ br.only-m::after {
           animation: menu_opacity 0.5s linear 1;
 }
 
+@media screen and (max-width: 1400px) {
+  #gnb .sub {
+    right: -50px;
+  }
+}
+
 #gnb .sub a.close {
   display: inline-block;
   font-size: 30px;
@@ -270,7 +284,23 @@ br.only-m::after {
 }
 
 #gnb .sub ul li + li {
-  margin-top: 20px;
+  margin-top: 12px;
+}
+
+#gnb.light a.btn {
+  color: #D6D6D6;
+}
+
+#gnb.light a.btn::after {
+  background-color: #D6D6D6;
+}
+
+#gnb.light .circle {
+  background: #D6D6D6;
+}
+
+#gnb.light .sub {
+  color: #171717;
 }
 
 .ticker .scroll.txt {
@@ -307,6 +337,7 @@ br.only-m::after {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 550px;
 }
 
 #home .tit h3 {
@@ -436,6 +467,8 @@ a.btn {
   display: inline-block;
   font-weight: 700;
   padding-left: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 a.btn::after {
@@ -447,6 +480,8 @@ a.btn::after {
   height: 1em;
   background-color: #333;
   border-radius: 100px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 @-webkit-keyframes menu_opacity {
