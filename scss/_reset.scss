@@ -14,3 +14,15 @@ table caption {overflow: hidden; width: 0; height: 0;}
 i[class^="xi"] {position: relative; display: inline-block; vertical-align: middle;}
 i[class^="xi"] span {position: absolute; left: -9999px;}
 .ir-hidden {position: absolute; left: -9999px;}
+
+%reset-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  -webkit-appearance: none;
+}

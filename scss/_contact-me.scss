@@ -1,0 +1,28 @@
+#contact {
+  div.box > div {
+   position: relative; float: left; height: 100%; 
+  }
+
+  .memoji {
+    width: 60%;
+    p {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+    p:nth-child(1) {width: 200px; top: 100px;}
+    p:nth-child(2) {width: 250px; margin-left: 100px; top: 220px;}
+    p:nth-child(3) {width: 400px; top: 450px;}
+  }
+
+  .contact-info {
+    .inner {
+      position: absolute; top: 50%; transform: translateY(-50%);
+    
+      div {
+        position: relative; padding-left: 50px; margin-bottom: 50px;
+      }
+
+      div::before {position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 40px;}
+
+      div.linkedin::before {content: '\ebf4'; font-family: 'xeicon';}
+      div.email::before {content: '\ea06'; font-family: 'xeicon';}
+    }
+  }
+}
