@@ -1,0 +1,54 @@
+// // about me
+$emojis: (
+  brain: (idx: 1, unicode: '\01F9E0'),
+  thinking: (idx: 2, unicode: '\01F914'),
+  developer: (idx: 3, unicode: '👩‍💻'),
+  fire: (idx: 4, unicode: '\01F525'),
+);
+
+
+#about > .box {
+  padding: 50px 50px 50px 60px; box-sizing: border-box;
+
+  p {
+    font-weight: 700; font-size: 65px;
+
+    @each $key, $value in $emojis {
+      &.#{$key}{
+        span:nth-child(1)::after {content:'#{map-get($value,unicode)}'; position: absolute; right: 0; top: 0; opacity: 0; transform: scale(0);}
+      }
+    }
+
+    span {position: relative; transition: all 0.5s;}
+  }
+}
+
+#about.on > .box > p {
+  span:nth-child(1) {transform: translateX(-10px); padding-right: 80px;}
+  span:nth-child(2) {transform: translateX(10px); padding-left: 10px;}
+  @each $key, $value in $emojis {
+    &.#{$key} span:nth-child(1)::after {
+      animation: emoji_scale 0.5s linear forwards;
+      animation-delay: #{map-get($value,idx) / 10}s;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  #about > .box p {
+    font-size: 40px;
+  }
+  #about.on > .box > p {
+    span:nth-child(1) {transform: translateX(-10px); padding-right: 50px;}
+  }
+}
+
+@media only screen and (max-width: $xsmall-screen) {
+  #about > .box p {
+    font-size: 26px;
+
+  }
+  #about.on > .box > p {
+    span:nth-child(1) {transform: translateX(-10px); padding-right: 32px;}
+  }
+}

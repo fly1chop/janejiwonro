@@ -9,9 +9,9 @@
   <meta name="description" content="Jane's Web Portfolio">
   <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /> -->
   <link rel="stylesheet" href="xeicon/xeicon.min.css" />
-  <link rel="stylesheet" href="css/web-font.css" />
-  <link rel="stylesheet" href="css/style-pc.css" media="screen and (min-width: 1024.0px)" />
-  <link rel="stylesheet" href="css/style-m.css" media="screen and (max-width: 1023.9px)" />
+  <link rel="stylesheet" href="css/nanumsquare.css" />
+  <link rel="stylesheet" href="css/style-pc.css" />
+  <!-- <link rel="stylesheet" href="css/style-m.css" media="screen and (max-width: 1023.9px)" /> -->
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/main.js"></script>
 </head>
@@ -20,21 +20,26 @@
     <a href="#main" id="skip-nav">본문 바로가기</a>
     <header id="header">
       <div class="box">
+        <h1>Jane Ji Won Ro</h1>
+        <a href="#" class="mobile menu"><span>메뉴 열기/닫기</span></a>
         <nav id="gnb">
-          <a class="btn" href="#">Menu</a>
-          <div class="circle"></div>
-          <div class="sub">
-            <a href="#" class="close"><i class="xi-close"><span>메뉴 닫기</span></i></a>
-            <ul>
-              <li><a href="#">About Me</a></li>
-              <li><a href="#">My Skills</a></li>
-              <li><a href="#">My Projects</a></li>
-              <li><a href="#">Contact Me</a></li>
-            </ul>
-          </div>
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" class="active">About</a></li>
+            <li><a href="#" class="active">Skills</a></li>
+            <li><a href="#" class="active">Portfolio</a></li>
+            <li><a href="#" class="active">Contact</a></li>
+          </ul>
         </nav>
       </div>
+      <div class="theme">
+        <a href="#" class="light">
+          <i class="xi-moon"><span>다크모드 켜기</span></i>
+          <i class="xi-brightness"><span>라이트모드 켜기</span></i>
+        </a>
+      </div>
     </header>
+    <div class="mouse-cursor-tracking"></div>
     <main id="main">
       <section id="home" class="page">
         <div class="ticker">
@@ -81,46 +86,15 @@
             </ul>
           </div>
         </div>
-        <div class="box">
-          <div class="tit">
-            <h3>Hello.<br />I'm Jane.</h3>
-            <ul>
-              <li>Frontend Developer</li>
-              <!-- <li>UX/UI Planner</li> -->
-            </ul>
-          </div>
+        <div class="tit">
+          <h3>Hello.<br />I'm Jane.</h3>
+          <p>Frontend Developer</p>
           <a class="down" href="#">
-            <i class="xi-caret-down-circle-o"><span>다음 페이지로 넘어가기</span></i>
+            <i class="xi-angle-down"><span>다음 페이지로 넘어가기</span></i>
           </a>
         </div>
       </section>
       <section id="about" class="page" title="About Me">
-        <div class="ticker">
-          <div class="scroll txt">
-            <ul class="light">
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-            </ul>
-            <ul class="light">
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-              <li>About Me</li>
-            </ul>
-          </div>
-        </div>
         <div class="box">
           <p class="brain"><span>I got a</span><span>Psych degree</span></p>
           <p class="thinking"><span>and went into</span><span>SEO marketing</span></p>
@@ -129,232 +103,284 @@
           <p><span>and now I am an</span></p>
           <p class="fire"><span> aspiring</span><span>frontend developer.</span></p>
         </div>
+                  <!-- <h3>About Me</h3>
+          <div class="content">
+            <div class="img"><img src="img/contact-memoji.png" alt="Jane's memoji" /></div>
+            <div>
+              <p>I am a self-taught frontend developer based in South Korea. I studied psychology at McGill University and went into SEO marketing for a bit until I discovered that I could do coding. From there and on, I have been on the road to become a web developer.</p>
+              <ul>
+                <li>#leadership</li>
+                <li>#self-development</li>
+                <li>#empathy</li>
+                <li>#people-oriented</li>
+                <li>#passionate-about-recycling</li>
+                <li>#animal-lover</li>
+                <li>#movie-critic</li>
+                <li>#restaurant-connoisseur</li>
+              </ul>
+            </div>
+          </div> -->
       </section>
-      <section id="skill" class="page" title="My Skills">
-        <div class="ticker">
-          <div class="scroll txt">
-            <ul>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-            </ul>
-            <ul>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-              <li>My Skills</li>
-            </ul>
-          </div>
-        </div>
+      <section id="skill" class="page" title="Skills & Experience">
+       <div class="box">
+         <h3>Skills & Experience</h3>
+         <div class="content">
+           <ul class="col-3">
+            <li>
+              <h5>Education</h5>
+              <ul class="ul-edu">
+                <li>
+                  <p>Psychology (B.A.)</p>
+                  <p>McGill University</p>
+                  <p>2013.09 - 2019.05</p>
+                </li>
+                <li>
+                  <p>프론트엔드 개발 취업 아카데미</p>
+                  <p>아카데미정글</p>
+                  <p>2022.01 - 2022.04</p>
+                </li>
+                <li>
+                  <p>웹 디자인 & 웹 퍼블리싱</p>
+                  <p>아카데미정글</p>
+                  <p>2021.09 - 2021.12</p>
+                </li>
+                <li>
+                  <p>라이트브레인 UX기획</p>
+                  <p>아카데미정글</p>
+                  <p>2021.09 - 2021.12</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h5>Languages</h5>
+              <ul class="ul-meter">
+                <li>
+                  <p class="high">HTML5</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="high">CSS3</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid-high">JavaScript</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="high">jQuery</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid">React.js</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid-high">SCSS</p>
+                  <p class="meter"><span></span></p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h5>Skills</h5>
+              <ul class="ul-meter">
+                <li class="high">
+                  <p>Figma</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid-high">XD</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid">Photoshop</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="mid-high">Illustrator</p>
+                  <p class="meter"><span></span></p>
+                </li>
+                <li>
+                  <p class="high">Google Analytics</p>
+                  <p class="meter"><span></span></p>
+                </li>
+              </ul>
+            </li>
+           </ul>
+         </div>
+       </div>
       </section>
-      <section id="project" class="page" title="My Projects">
-        <div class="ticker">
-          <div class="scroll txt">
-            <ul>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-            </ul>
-            <ul>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-              <li>My Projects</li>
-            </ul>
-          </div>
-        </div>
+      <section id="portfolio" class="page" title="Portfolio">
         <div class="box">
+          <h3>Portfolio</h3>
           <div class="sticky-container">
-            <div class="filter">
-              <button class="btn" name="all">ALL</button>
-              <button class="btn" name="responsive">Responsive</button>
-              <button class="btn" name="jquery">jQuery</button>
-              <button class="btn" name="javascript">JavaScript</button>
-              <button class="btn" name="react">React</button>
-              <button class="btn" name="scss">SCSS</button>
+            <div class="filter" id="filters">
+              <button class="on" name="all">ALL</button>
+              <button name="responsive">Responsive</button>
+              <button name="jquery">jQuery</button>
+              <button name="javascript">JavaScript</button>
+              <button name="react">React</button>
+              <button name="scss">SCSS</button>
+              <button name="design">Design</button>
             </div>
             <ul class="list">
               <li>
                 <div class="img"><img src="img/project_hyundai.png" alt="현대오토에버 웹사이트" /></div>
                 <div class="info">
                   <p class="tit">현대오토에버 웹사이트</p>
-                  <div class="lang">
-                    <ul class="filterable">
-                      <li data-menu="css">CSS</li>
-                      <li data-menu="html">HTML</li>
-                      <li data-menu="javascript">JavaScript</li>
-                      <li data-menu="jquery">jQuery</li>
-                      <li data-menu="responsive">Responsive Web</li>
-                    </ul>
-                  </div>
+                  <ul class="tags">
+                    <li data-menu="css">CSS</li>
+                    <li data-menu="html">HTML</li>
+                    <li data-menu="javascript">JavaScript</li>
+                    <li data-menu="jquery">jQuery</li>
+                    <li data-menu="responsive">Responsive Web</li>
+                  </ul>
                   <p>기여도 : 100%</p>
                   <ul class="link">
-                    <li><a href="https://github.com/fly1chop/hyundai-autoever" target="_blank">GitHub</a></li>
-                    <li><a href="https://fly1chop.github.io/hyundai-autoever/" target="_blank">GoToSite</a></li>
+                    <li><a href="https://github.com/fly1chop/hyundai-autoever" target="_blank" class="active">GitHub</a></li>
+                    <li><a href="https://fly1chop.github.io/hyundai-autoever/" target="_blank" class="active">GoToSite</a></li>
+                    <li><a href="#" class="active">Details</a></li>
                   </ul>
                 </div>
                 <div class="popup-layer">
-                  
+                  <div class="box">
+                    <a href="#" class="close"></a>
+                    <h5>현대오토에버 웹사이트</h5>
+                    <p class="img"><img src="img/project_hyundai.png" alt="현대오토에버 웹사이트" /></p>
+                    <div class="content">
+                      <p>Key Features</p>
+                      <ol>
+                        <li>1. 직접 제작한 다양한 스크롤 이벤트</li>
+                        <li>2. 비디오 영상을 가주친 이미지 슬라이드</li>
+                        <li>3. 싱글 페이지로된 서브 페이지</li>
+                      </ol>
+                      <p>
+                        ‘Hyundai Autoever’ homepage features many scroll events making the browsing experience a lot more interesting. I wanted to challenge myself in creating different types of complicated scroll events and this project was a great exercise to practice.
+                      </p>
+                      <ul>
+                        <li><a href="https://github.com/fly1chop/hyundai-autoever" target="_blank" class="active">GitHub</a></li>
+                        <li><a href="https://fly1chop.github.io/hyundai-autoever/" target="_blank" class="active">GoToSite</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li>
                 <div class="img"><img src="img/project_dunkin.png" alt="던킨도너츠 코리아 웹사이트" /></div>
                 <div class="info">
                   <p class="tit">던킨도너츠 코리아 웹사이트</p>
-                  <div class="lang">
-                    <ul class="filterable">
-                      <li data-menu="css">CSS</li>
-                      <li data-menu="html">HTML</li>
-                      <li data-menu="vanilla">VanillaJS</li>
-                      <li data-menu="responsive">Responsive Web</li>
-                    </ul>
-                  </div>
+                  <ul class="tags">
+                    <li data-menu="css">CSS</li>
+                    <li data-menu="html">HTML</li>
+                    <li data-menu="vanilla">VanillaJS</li>
+                    <li data-menu="responsive">Responsive Web</li>
+                  </ul>
                   <p>기여도 : 100%</p>
                   <ul class="link">
-                    <li><a href="https://github.com/fly1chop/dunkin" target="_blank">GitHub</a></li>
-                    <li><a href="https://fly1chop.github.io/dunkin/" target="_blank">GoToSite</a></li>
+                    <li><a href="https://github.com/fly1chop/dunkin" target="_blank" class="active">GitHub</a></li>
+                    <li><a href="https://fly1chop.github.io/dunkin/" target="_blank" class="active">GoToSite</a></li>
+                    <li><a href="#" class="active">Details</a></li>
+                  </ul>
+                </div>
+                <div class="popup-layer">
+                  <div class="box">
+                    <a href="#" class="close"><i class="xi-close"><span>팝업 닫기</span></i></a>
+                    <h5>던킨도너츠 코리아 웹사이트</h5>
+                    <p class="img"><img src="img/project_dunkin.png" alt="던킨도너츠 코리아 웹사이트" /></p>
+                    <div class="content">
+                      <p>Key Features</p>
+                      <ol>
+                        <li>1. 직접 제작한 다양한 스크롤 이벤트</li>
+                        <li>2. 비디오 영상을 가주친 이미지 슬라이드</li>
+                        <li>3. 싱글 페이지로된 서브 페이지</li>
+                      </ol>
+                      <p>
+                        ‘Hyundai Autoever’ homepage features many scroll events making the browsing experience a lot more interesting. I wanted to challenge myself in creating different types of complicated scroll events and this project was a great exercise to practice.
+                      </p>
+                      <ul>
+                        <li><a href="https://github.com/fly1chop/dunkin" target="_blank" class="active">GitHub</a></li>
+                        <li><a href="https://fly1chop.github.io/dunkin/" target="_blank" class="active">GoToSite</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img"><img src="img/project_img_3.jpeg" alt="LGU+ 유플일상" /></div>
+                <div class="info">
+                  <p class="tit">LGU+ 유플일상</p>
+                  <ul class="tags">
+                    <li data-menu="css">CSS</li>
+                    <li data-menu="html">HTML</li>
+                    <li data-menu="jquery">jQuery</li>
+                    <li data-menu="responsive">Responsive Web</li>
+                  </ul>
+                  <p>기여도 : 100%</p>
+                  <ul class="link">
+                    <li><a href="#" target="_blank" class="active">GitHub</a></li>
+                    <li><a href="#" target="_blank" class="active">GoToSite</a></li>
+                    <li><a href="#" class="active">Details</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img"><img src="img/project_img_3.jpeg" alt="관리자 페이지" /></div>
+                <div class="info">
+                  <p class="tit">관리자 페이지</p>
+                  <ul class="tags">
+                    <li data-menu="css">CSS</li>
+                    <li data-menu="scss">SCSS</li>
+                    <li data-menu="html">HTML</li>
+                    <li data-menu="javascript">JavaScript</li>
+                    <li data-menu="jquery">jQuery</li>
+                    <li data-menu="design">Design</li>
+                  </ul>
+                  <p>기여도 : 100%</p>
+                  <ul class="link">
+                    <li><a href="#" target="_blank" class="active">GitHub</a></li>
+                    <li><a href="#" target="_blank" class="active">GoToSite</a></li>
+                    <li><a href="#" class="active">Details</a></li>
                   </ul>
                 </div>
               </li>
               <li>
                 <div class="img"><img src="img/project_img_3.jpeg" alt="프로젝트명" /></div>
                 <div class="info">
-                  <p class="tit">프로젝트명</p>
-                  <div class="lang">
-                    <ul class="filterable">
-                      <li data-menu="css">CSS</li>
-                      <li data-menu="scss">SCSS</li>
-                      <li data-menu="html">HTML</li>
-                      <li data-menu="react">React</li>
-                      <li data-menu="javascript">JavaScript</li>
-                      <li data-menu="vanilla">VanillaJS</li>
-                      <li data-menu="jquery">jQuery</li>
-                      <li data-menu="responsive">Responsive Web</li>
-                    </ul>
-                  </div>
-                  <p>기여도 : 100%</p>
-                  <ul class="link">
-                    <li><a href="#" target="_blank">GitHub</a></li>
-                    <li><a href="#" target="_blank">GoToSite</a></li>
+                  <p class="tit">Jane Ji Won Ro (포트폴리오)</p>
+                  <ul class="tags">
+                    <li data-menu="scss">SCSS</li>
+                    <li data-menu="html">HTML</li>
+                    <li data-menu="jquery">jQuery</li>
+                    <li data-menu="responsive">Responsive Web</li>
+                    <li data-menu="design">Design</li>
                   </ul>
-                </div>
-              </li>
-              <li>
-                <div class="img"><img src="img/project_img_3.jpeg" alt="프로젝트명" /></div>
-                <div class="info">
-                  <p class="tit">프로젝트명</p>
-                  <div class="lang">
-                    <ul class="filterable">
-                      <li data-menu="css">CSS</li>
-                      <li data-menu="scss">SCSS</li>
-                      <li data-menu="html">HTML</li>
-                      <li data-menu="react">React</li>
-                      <li data-menu="javascript">JavaScript</li>
-                      <li data-menu="vanilla">VanillaJS</li>
-                      <li data-menu="jquery">jQuery</li>
-                      <li data-menu="responsive">Responsive Web</li>
-                    </ul>
-                  </div>
                   <p>기여도 : 100%</p>
                   <ul class="link">
-                    <li><a href="#" target="_blank">GitHub</a></li>
-                    <li><a href="#" target="_blank">GoToSite</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <div class="img"><img src="img/project_img_3.jpeg" alt="프로젝트명" /></div>
-                <div class="info">
-                  <p class="tit">프로젝트명</p>
-                  <div class="lang">
-                    <ul class="filterable">
-                      <li data-menu="css">CSS</li>
-                      <li data-menu="scss">SCSS</li>
-                      <li data-menu="html">HTML</li>
-                      <li data-menu="react">React</li>
-                      <li data-menu="javascript">JavaScript</li>
-                      <li data-menu="vanilla">VanillaJS</li>
-                      <li data-menu="jquery">jQuery</li>
-                      <li data-menu="responsive">Responsive Web</li>
-                    </ul>
-                  </div>
-                  <p>기여도 : 100%</p>
-                  <ul class="link">
-                    <li><a href="#" target="_blank">GitHub</a></li>
-                    <li><a href="#" target="_blank">GoToSite</a></li>
+                    <li><a href="#" target="_blank" class="active" class="active">GitHub</a></li>
+                    <li><a href="#" target="_blank" class="active">GoToSite</a></li>
+                    <li><a href="#" class="active">Details</a></li>
                   </ul>
                 </div>
               </li>
             </ul>
           </div>
-          
         </div>
       </section>
       <section id="contact" class="page" title="Contact Me">
-        <div class="ticker">
-          <div class="scroll txt">
-            <ul>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-            </ul>
-            <ul>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-              <li>Contact Me</li>
-            </ul>
-          </div>
-        </div>
         <div class="box">
-          <div class="memoji">
-            <p class="img"><img src="img/contact-memoji-02.png" alt="" /></p>
-            <p class="img"><img src="img/contact-memoji-01.png" alt="" /></p>
-            <p class="img"><img src="img/contact-memoji.png" alt="" /></p>
-          </div>
-          <div class="contact-info">
-            <div class="inner">
+          <h3>Contact Me</h3>
+          <div class="content">
+            <div class="contact-info">
               <div class="linkedin">
                 <p>Find me on LinkedIn!</p>
-                <p><a href="#">linkedin.com/in/janejiwonro/</a></p>
+                <p><a href="#" class="active">linkedin.com/in/janejiwonro/</a></p>
               </div>
               <div class="email">
                 <p>Send me an email!</p>
-                <p><a href="#">janero95@gmail.com</a></p>
+                <p><a href="#" class="active">janero95@gmail.com</a></p>
               </div>
+            </div>
+            <div class="memoji">
+              <p class="img"><img src="img/contact-memoji-01.png" alt="" /></p>
             </div>
           </div>
         </div>

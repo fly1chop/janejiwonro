@@ -1,28 +1,44 @@
 #contact {
-  div.box > div {
-   position: relative; float: left; height: 100%; 
+  .content {
+    position: relative;
+    height: 250px;
+    width: 500px;
+    margin: 0 auto;
   }
 
   .memoji {
-    width: 60%;
-    p {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-    p:nth-child(1) {width: 200px; top: 100px;}
-    p:nth-child(2) {width: 250px; margin-left: 100px; top: 220px;}
-    p:nth-child(3) {width: 400px; top: 450px;}
+    position: absolute; width: 250px; right: 0; top: 0;
   }
 
   .contact-info {
-    .inner {
-      position: absolute; top: 50%; transform: translateY(-50%);
-    
-      div {
-        position: relative; padding-left: 50px; margin-bottom: 50px;
-      }
+    height: 100%;
+    vertical-align: middle;
+    padding-top: 50px;
 
-      div::before {position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 40px;}
+    div {
+      position: relative; padding-left: 50px; margin: 0 0 50px 50px;
+    }
 
-      div.linkedin::before {content: '\ebf4'; font-family: 'xeicon';}
-      div.email::before {content: '\ea06'; font-family: 'xeicon';}
+    div::before {position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 40px;}
+
+    div.linkedin::before {content: '\ebf4'; font-family: 'xeicon';}
+    div.email::before {content: '\ea06'; font-family: 'xeicon';}
+  }
+}
+
+@media only screen and (max-width: $xsmall-screen) {
+  #contact {
+    .content {width: 100%;}
+    .memoji {
+      position: fixed;
+      width: 100%;
+      top: 50%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .contact-info {
+
     }
   }
 }

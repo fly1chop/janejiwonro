@@ -1,66 +1,105 @@
-$font-family: 'Anonymous Pro', 'monospace';
-$text-dark: #171717;
-$text-light: #fff;
-$primary-dark: #333;
-$secondary-light: #D6D6D6;
+$font-family: 'NanumSquare', 'sans-serif';
 $med-screen: 1200px;
-$small-screen: 900px;
+$small-screen: 940px;
+$xsmall-screen: 650px;
 
-// :root {
-//   --color-background: #{$primary-dark};
-//   --color-text: #{$text-light};
-// }
-// .light {
-//   --color-background: #{$secondary-light};
-//   --color-text: #{$text-dark};
-// }
+@mixin link-underline {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: var(--link-background-color);
+  animation: link_underline 0.2s ease-in;
+}
+@mixin link-box {
+  background: var(--link-background-color);
+  color: var(--link-text-color);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px 3px var(--box-shadow-color);
+}
 
-.light {
-  color: $text-light !important;
+:root {
+  --background-color: #AECBE3;
+  --text-color: #171717;
+  --menu-color: #333333;
+  --font-family: 'NanumSquare', 'sans-serif';
+  --link-background-color: #333333;
+  --link-text-color: #D6D6D6;
+  --box-shadow-color: rgba(0,0,0,0.25);
+  --cursor-gradient: radial-gradient(circle, rgba(225,65,96,1) 0%, rgba(255,150,31,0.55) 30%, rgba(174,203,227,0) 50%);
+}
+
+html[data-theme='light'] {
+  --background-color: #AECBE3;
+  --text-color: #171717;
+  --menu-color: #333333;
+  --link-background-color: #333333;
+  --link-text-color: #D6D6D6;
+  --box-shadow-color: rgba(0,0,0,0.25);
+  --cursor-gradient: radial-gradient(circle, rgba(225,65,96,1) 0%, rgba(255,150,31,0.55) 30%, rgba(174,203,227,0) 50%);
+}
+html[data-theme='dark'] {
+  --background-color: #00025B;
+  --text-color: #F0F0F0;
+  --menu-color: #D6D6D6;
+  --link-background-color: #D6D6D6;
+  --link-text-color: #333333;
+  --box-shadow-color: rgb(214, 214, 214,0.25);
+  --cursor-gradient: radial-gradient(circle, rgba(191,19,53,0.8) 0%, rgba(218,94,21,0.5) 30%, rgba(0,2,91,0) 50%);
 }
 
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: $font-family;
   font-size: 14px;
-  color: $primary-dark;
 }
 
-#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: rgba(0, 0, 0, 0.7); color: $text-light; font-size: 16px; transition: top 0.3s; z-index: 10000;}
+header {
+  color: var(--menu-color);
+}
+
+a {
+ position: relative; 
+}
+a.active:hover::after {
+  @include link-underline;
+}
+
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: var(--link-background-color); color: var(--link-text-color); opacity: 0.7; font-size: 16px; transition: top 0.3s; z-index: 10000;}
 #skip-nav:focus {top: 0;}
 
-section > div.box {
-  position: absolute;
-  max-width: 1200px;
-  width: 100%;
-  height: calc(100vh - 100px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-%page-common {
+section {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  padding: 0 50px;
 }
 
-@for $i from 1 through 5 {
-  .page:nth-child(#{$i}) {
-    @extend %page-common;
-    background: url(../img/bg_#{$i}.jpg) 50% 50% no-repeat;
-    background-size: cover;
-  };
+section > .box {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  height: calc(100% - 200px);
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  h3 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 }
-
-// module
-.btn {position: relative; display: inline-block; font-weight: 700; padding-left: 20px; transition: all 0.3s;}
-.btn::after {position: absolute; left: 0; top: 0; content: ''; width: 1em; height: 1em; background-color: $primary-dark; border-radius: 100px; transition: all 0.3s;}
-
 
 .ticker {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  left: -50px;
 }
 
 .ticker .scroll {
@@ -73,7 +112,7 @@ section > div.box {
 .ticker .scroll > ul {
   width: 100%;
   display: flex;
-  color: $primary-dark;
+  color: var(--menu-color);
   opacity: 0.3;
   font-size: 24px;
   animation: ticker_translate 40s linear infinite;

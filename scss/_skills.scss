@@ -1,0 +1,82 @@
+//Skills & Experience
+#skill {
+  ul.col-3 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    > li > h5 {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .ul-edu > li {
+      margin-bottom: 30px;
+
+      p:first-child {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .ul-meter > li {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 16px;
+
+      p.meter {
+        display: block;
+        margin-top: 10px;
+        width: 300px;
+        height: 8px;
+        border-radius: 100px;
+        position: relative;
+
+        span {
+          width: 100%;
+          background-color: var(--menu-color);
+          opacity: 1;
+          height: 100%;
+          border-radius: 100px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+      
+      p.meter::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--menu-color);
+        opacity: 0.4;
+        border-radius: 100px;
+      }
+
+      p.high + p.meter > span {width: 100%;}
+      p.mid-high + p.meter > span {width: 80%;}
+      p.mid + p.meter > span {width: 50%;}
+    }
+  }
+
+  ul.col-3::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--text-color);
+    left: 0;
+    top: 30px;
+  }
+}
+
+#skill.on ul.col-3 span {
+  animation: horizontal_scale 3s ease-out;
+}
